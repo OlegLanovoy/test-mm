@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "type": "Credit",
+    "amount": 14.06,
+    "name": "Apple",
+    "description": "Card Number Used Diana",
+    "fullDate": "2025-05-28",
+    "pending": false,
+    "time": "14:37",
+    "dateName": "Wednesday",
+    "performedBy": "Diana"
+  },
+  {
+    "id": "2",
+    "type": "Payment",
+    "amount": 174.0,
+    "name": "Payment",
+    "description": "From JPMorgan Chase ",
+    "pending": true,
+    "time": "08:19",
+    "fullDate": "2025-05-29",
+    "dateName": "Thursday",
+    "performedBy": null
+  },
+  {
+    "id": "3",
+    "type": "Credit",
+    "amount": 3.24,
+    "name": "Apple",
+    "description": "Card Number Used Diana",
+    "pending": false,
+    "time": "09:31",
+    "fullDate": "2022-10-01",
+    "dateName": "Sunday",
+    "performedBy": "Tom"
+  },
+  {
+    "id": "4",
+    "type": "Payment",
+    "amount": 99.71,
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank Nationality",
+    "dateName": "Wednesday",
+    "pending": true,
+    "time": "11:07",
+    "fullDate": "2025-05-28",
+    "performedBy": null
+  },
+  {
+    "id": "5",
+    "type": "Payment",
+    "amount": 73.58,
+    "pending": true,
+    "name": "Payment",
+    "description": "From JPMorgan Chase Bank Nationality",
+    "time": "22:52",
+    "fullDate": "2023-09-01",
+    "dateName": "Friday",
+    "performedBy": null
+  },
+  {
+    "id": "6",
+    "type": "Credit",
+    "amount": 21.61,
+    "name": "IKEA",
+    "description": "Round Rock, TX",
+    "pending": false,
+    "time": "09:31",
+    "fullDate": "2021-03-04",
+    "dateName": "Monday",
+    "performedBy": null
+  },
+  {
+    "id": "7",
+    "type": "Credit",
+    "amount": 73.58,
+    "name": "Target",
+    "description": "Cedar Park, TX",
+    "pending": true,
+    "time": "17:03",
+    "fullDate": "2025-05-25",
+    "dateName": "Sunday",
+    "performedBy": null
+  }
+]
