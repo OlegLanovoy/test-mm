@@ -19,35 +19,33 @@ export function TransactionsList({
   const availableBalance = 1482.7;
 
   return (
-    <div className="min-h-screen bg-[#0f0e14d6] p-4 max-w-md mx-auto">
+    <div className="min-h-screen bg-[#e7e7e7] text-black p-4 max-w-md mx-auto">
       {/* Top Cards Row */}
       <div className="grid grid-cols-2 grid-rows-2 gap-4 mb-6 text-left">
-        <Card className="p-2 bg-[#090909] border-none gap-0">
-          <h2 className="text-white text-sm font-medium">Card Balance</h2>
-          <div className="text-white text-2xl font-bold">
+        <Card className="p-2  bg-white border gap-0">
+          <h2 className="text-black text-sm font-medium">Card Balance</h2>
+          <div className="text-black text-2xl font-bold">
             ${cardBalance.toFixed(2)}
           </div>
-          <div className="text-gray-400 text-sm">
+          <div className="text-gray-600 text-sm">
             ${availableBalance.toFixed(2)} Available
           </div>
         </Card>
+
         <DailyPoints />
 
-        <Card
-          className="p-2 bg-[#090909] border-none col-start-2 row-span-full justify-between gap-0
-        "
-        >
+        <Card className="p-2 bg-white border col-start-2 row-span-full justify-between gap-0">
           <div>
-            <h2 className="text-white text-sm font-medium">No Payment Due</h2>
-            <div className="text-gray-400 text-sm">You've paid your</div>
-            <div className="text-gray-400 text-sm">September balance.</div>
+            <h2 className="text-black text-sm font-medium">No Payment Due</h2>
+            <div className="text-gray-600 text-sm">You've paid your</div>
+            <div className="text-gray-600 text-sm">September balance.</div>
           </div>
           <div className="flex justify-end mt-2">
-            <div className="w-16 h-16 bg-[#2b2934] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-[#e0e0e0] rounded-full flex items-center justify-center">
               <FontAwesomeIcon
                 icon={faCheck}
                 size="2xl"
-                className="text-white"
+                className="text-black"
               />
             </div>
           </div>
@@ -56,33 +54,33 @@ export function TransactionsList({
 
       {/* Latest Transactions */}
       <div className="space-y-4">
-        <h3 className="text-white text-lg font-semibold text-left ">
+        <h3 className="text-black text-lg font-semibold text-left ">
           Latest Transactions
         </h3>
 
-        <div className="divide-y-1 divide-[#1a1a1a]">
+        <div className="divide-y divide-[#eaeaea]">
           {transactions.map((tx, index) => {
             const icon =
               tx.name === "Apple" ? (
-                <span className="text-white text-lg">🍎</span>
+                <span className="text-black text-lg">🍎</span>
               ) : tx.name === "IKEA" ? (
-                <span className="text-white text-xs font-bold">IKEA</span>
+                <span className="text-black text-xs font-bold">IKEA</span>
               ) : tx.name === "Target" ? (
-                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-red-600 rounded-full"></div>
                 </div>
               ) : (
-                <span className="text-white text-lg">🏦</span>
+                <span className="text-black text-lg">🏦</span>
               );
 
             const iconBg =
               tx.name === "Apple"
-                ? "bg-gray-700"
+                ? "bg-gray-200"
                 : tx.name === "IKEA"
-                ? "bg-blue-600"
+                ? "bg-blue-300"
                 : tx.name === "Target"
-                ? "bg-red-600"
-                : "bg-gradient-to-br from-orange-400 to-purple-600";
+                ? "bg-red-300"
+                : "bg-gradient-to-br from-orange-200 to-purple-200";
 
             const isCredit = tx.type === "Credit";
             const amount =
@@ -111,10 +109,11 @@ export function TransactionsList({
             } catch (err) {
               displayDate = tx.fullDate ?? "Unknown";
             }
+
             return (
               <div
                 key={tx.id}
-                className={`w-full p-4 h-auto justify-start hover:bg-gray-900 bg-[#090909] ${borderClass}`}
+                className={`w-full p-4 h-auto justify-start hover:bg-gray-300 bg-white ${borderClass}`}
                 onClick={() => onTransactionSelect(tx as Transaction)}
               >
                 <div className="flex items-center space-x-3 w-full">
@@ -125,10 +124,10 @@ export function TransactionsList({
                   </div>
 
                   <div className="flex-1 text-left">
-                    <div className="text-white font-medium">{tx.name}</div>
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-black font-medium">{tx.name}</div>
+                    <div className="text-gray-600 text-sm">
                       {tx.pending && (
-                        <span className="text-yellow-500 font-semibold mr-1">
+                        <span className="text-yellow-600 font-semibold mr-1">
                           Pending
                         </span>
                       )}
@@ -137,9 +136,9 @@ export function TransactionsList({
                         : tx.description}
                     </div>
 
-                    <div className="text-gray-400 text-sm">
+                    <div className="text-gray-600 text-sm">
                       {tx.performedBy && (
-                        <span className="text-blue-400 font-medium mr-1">
+                        <span className="text-blue-600 font-medium mr-1">
                           {tx.performedBy}
                         </span>
                       )}
@@ -149,10 +148,10 @@ export function TransactionsList({
 
                   <div className="text-right flex items-start  space-x-2">
                     <div>
-                      <div className="text-white font-semibold  ">{amount}</div>
-                      <div className="text-gray-400 text-xs">{percentage}</div>
+                      <div className="text-black font-semibold">{amount}</div>
+                      <div className="text-gray-600 text-xs">{percentage}</div>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-gray-400" />
+                    <ChevronRight className="w-4 h-4 text-gray-600" />
                   </div>
                 </div>
               </div>

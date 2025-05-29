@@ -14,10 +14,10 @@ export default function TransactionDetail({
   if (!transaction) return null;
 
   return (
-    <div className=" h-screen bg-black text-white min-w-md mx-auto p-4">
+    <div className="h-screen bg-[#e7e7e7] text-black min-w-md mx-auto p-4">
       {/* Header with back button */}
-      <div className="px-4 py-2 text-left ">
-        <button className="text-blue-500" onClick={onBack}>
+      <div className="px-4 py-2 text-left">
+        <button className="text-blue-600 bg-[#e7e7e7] " onClick={onBack}>
           <ChevronLeft size={24} />
         </button>
       </div>
@@ -32,9 +32,9 @@ export default function TransactionDetail({
         </div>
 
         {/* Merchant and date */}
-        <div className="text-gray-400 text-sm mb-12">
+        <div className="text-gray-600 text-sm mb-12">
           {transaction.performedBy && (
-            <span className="text-blue-400 font-medium">
+            <span className="text-blue-600 font-medium">
               {transaction.performedBy}
             </span>
           )}
@@ -45,28 +45,28 @@ export default function TransactionDetail({
         </div>
 
         {/* Payment details card */}
-        <Card className="w-full bg-[#121212] border-0">
+        <Card className="w-full bg-white border border-gray-300">
           <CardContent className="p-4">
             <div className="flex flex-col space-y-4">
               <div className="flex justify-between">
-                <span className="text-white">
+                <span className="text-black">
                   Status:{" "}
                   <span
                     className={
-                      transaction.pending ? "text-yellow-500" : "text-green-500"
+                      transaction.pending ? "text-yellow-600" : "text-green-600"
                     }
                   >
                     {transaction.pending ? "Pending" : "Approved"}
                   </span>
                 </span>
               </div>
-              <div className="text-gray-400 text-left ">
+              <div className="text-gray-600 text-left">
                 {transaction.description}
               </div>
-              <div className="border-t border-gray-800 pt-4 mt-2">
+              <div className="border-t border-gray-300 pt-4 mt-2">
                 <div className="flex justify-between">
-                  <span className="text-white">Total</span>
-                  <span className="text-white">
+                  <span className="text-black">Total</span>
+                  <span className="text-black">
                     {transaction.amount < 0
                       ? `$${Math.abs(transaction.amount)}`
                       : `$${transaction.amount}`}
